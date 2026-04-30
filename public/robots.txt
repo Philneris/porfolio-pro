@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://neris-assogbadjo.vercel.app/sitemap.xml
