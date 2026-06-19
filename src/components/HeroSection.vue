@@ -11,11 +11,11 @@
       <div class="hero-text">
         <div class="hero-badge">
           <span class="dot-pulse"></span>
-          Ingénieur Logiciel & Développeur Full-Stack
+           Développeur web
         </div>
         <h1>
           Je suis <span class="highlight-rose">Néris</span>,<br>
-          expert en solutions<br>
+          développeur web<br>
           <span class="typed-text">{{ currentText }}<span class="cursor-blink">|</span></span>
         </h1>
         <p>
@@ -32,12 +32,12 @@
         </div>
         <div class="hero-stats">
           <div class="stat">
-            <span class="stat-number">2+</span>
-            <span class="stat-label">Années d'expertise</span>
+            <span class="stat-number">1+</span>
+            <span class="stat-label">Années d'expérience</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
-            <span class="stat-number">10+</span>
+            <span class="stat-number">2</span>
             <span class="stat-label">Projets déployés</span>
           </div>
           <div class="stat-divider"></div>
@@ -48,20 +48,9 @@
         </div>
       </div>
 
-      <!-- Right: Abstract Visual instead of photo -->
+      <!-- Right: Photo -->
       <div class="hero-visual">
-        <div class="blob-wrapper">
-          <div class="blob-ring"></div>
-          <div class="blob">
-            <div class="abstract-graphic">
-              <div class="bar bar-1"></div>
-              <div class="bar bar-2"></div>
-              <div class="bar bar-3"></div>
-              <div class="dot dot-1"></div>
-              <div class="dot dot-2"></div>
-            </div>
-          </div>
-        </div>
+        <img src="/ma photo.png" alt="Néris - Développeur web" class="hero-photo">
       </div>
     </div>
   </section>
@@ -247,13 +236,22 @@ onUnmounted(() => { clearTimeout(timer) })
   background: var(--border-light);
 }
 
-/* -- Visual / Blob -- */
+/* -- Visual / Photo -- */
 .hero-visual {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   animation: fadeInUp 0.6s ease 0.3s both;
+}
+
+.hero-photo {
+  width: 370px;
+  height: 370px;
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  border: 3px solid rgba(221, 45, 74, 0.2);
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .blob-wrapper {

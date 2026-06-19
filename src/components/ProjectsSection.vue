@@ -107,7 +107,7 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const projects = [
   {
-    title: 'ATLogistique - Plateforme de suivi de colis en temps réel',
+    title: 'ATLogistique - Plateforme de suivi de colis',
     type: 'Application Web',
     image: '/capture-site-suivi-colis.png',
     gradient: 'linear-gradient(135deg, rgba(221, 45, 74, 0.8) 0%, rgba(48, 50, 61, 0.8) 100%)',
@@ -123,30 +123,6 @@ const projects = [
     icon: 'fas fa-school',
     badgeClass: 'badge-dark',
     url: 'https://newbethelinternationalschool.com/',
-  },
-  {
-    title: 'Simulateur de coût de dédouanement et logistique',
-    type: 'Outil Web',
-    image: '/capture-simulateur-cout.png',
-    gradient: 'linear-gradient(135deg, rgba(48, 50, 61, 0.8) 0%, rgba(26, 26, 46, 0.8) 100%)',
-    icon: 'fas fa-calculator',
-    badgeClass: 'badge-dark',
-  },
-  {
-    title: 'Luma Botanica - Boutique en ligne de produits naturels',
-    type: 'Site Vitrine',
-    image: '/site-vitrine-luma_botanica.png',
-    gradient: 'linear-gradient(135deg, rgba(121, 85, 72, 0.8) 0%, rgba(48, 50, 61, 0.8) 100%)',
-    icon: 'fas fa-leaf',
-    badgeClass: 'badge-dark',
-  },
-  {
-    title: 'BeClean - Service professionnel de nettoyage et entretien',
-    type: 'Site Vitrine',
-    image: '/site-vitrine-beclean.png',
-    gradient: 'linear-gradient(135deg, rgba(192, 255, 0, 0.8) 0%, rgba(48, 50, 61, 0.8) 100%)',
-    icon: 'fas fa-sparkles',
-    badgeClass: 'badge-red',
   },
 ]
 
