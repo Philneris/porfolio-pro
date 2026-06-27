@@ -56,8 +56,13 @@
                 >
                   <div class="card-preview">
                     <img :src="filteredProjects[currentIndex].image" :alt="filteredProjects[currentIndex].title" class="project-img" />
-                    <div class="click-hint">
-                      <i class="fas fa-expand-alt"></i>
+                    <div class="project-actions">
+                      <div class="action-hint expand-hint" title="Agrandir">
+                        <i class="fas fa-expand-alt"></i>
+                      </div>
+                      <a v-if="filteredProjects[currentIndex].url" :href="filteredProjects[currentIndex].url" target="_blank" rel="noopener noreferrer" class="action-hint link-hint" @click.stop title="Visiter le site">
+                        <i class="fas fa-external-link-alt"></i>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -95,6 +100,9 @@
           <div class="lightbox-caption">
             <h3>{{ selectedProject?.title }}</h3>
             <p>{{ selectedProject?.type }}</p>
+            <a v-if="selectedProject?.url" :href="selectedProject.url" target="_blank" rel="noopener noreferrer" class="lightbox-visit-btn">
+              Visiter le site <i class="fas fa-external-link-alt"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -123,6 +131,15 @@ const projects = [
     icon: 'fas fa-school',
     badgeClass: 'badge-dark',
     url: 'https://newbethelinternationalschool.com/',
+  },
+    {
+    title: 'Kayomora - Site vitrine',
+    type: 'Site Vitrine',
+    image: '/kayo-mora.png',
+    gradient: 'linear-gradient(135deg, rgba(255, 229, 0, 0.8) 0%, rgba(48, 50, 61, 0.8) 100%)',
+    icon: 'fas fa-school',
+    badgeClass: 'badge-dark',
+    url: 'https://github.com/Philneris/kayo-mora',
   },
 ]
 
@@ -372,10 +389,23 @@ onUnmounted(() => {
   transition: transform 0.6s ease;
 }
 
-.click-hint {
+.project-actions {
   position: absolute;
   bottom: 1.5rem;
   right: 1.5rem;
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--ease);
+}
+
+.carousel-card-single:hover .project-actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.action-hint {
   width: 44px;
   height: 44px;
   background: rgba(255, 255, 255, 0.9);
@@ -386,14 +416,14 @@ onUnmounted(() => {
   color: var(--red);
   font-size: 1.1rem;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  opacity: 0;
-  transform: translateY(10px);
   transition: var(--ease);
+  text-decoration: none;
 }
 
-.carousel-card-single:hover .click-hint {
-  opacity: 1;
-  transform: translateY(0);
+.action-hint:hover {
+  background: var(--red);
+  color: white;
+  transform: scale(1.1);
 }
 
 .carousel-card-single:hover .project-img {
@@ -489,6 +519,26 @@ onUnmounted(() => {
 .lightbox-caption p {
   color: rgba(255, 255, 255, 0.7);
   font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.lightbox-visit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.8rem 1.5rem;
+  background: var(--red);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--ease);
+}
+
+.lightbox-visit-btn:hover {
+  background: white;
+  color: var(--red);
+  transform: translateY(-2px);
 }
 
 /* Transitions */
